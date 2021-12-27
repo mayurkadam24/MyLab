@@ -10,7 +10,7 @@ environment {
 
 ArtifactId = readMavenPom().getArtifactId()
 Version = readMavenPom().getVersion()
-GroupId = readMavenPon().getgroupID
+GroupId = readMavenPom().getGroupID
 
 }
 
@@ -44,7 +44,7 @@ steps {
 
     def NexusRepo = Version.endsWith("SNAPSHOT") ? "VinaysDevOpsLabs-SNAPSHOT" : "VinaysDevOpsLabs-RELEASE"
 
-    nexusArtifactUploader artifacts: [[artifactId: '"${ArtifactId}"', classifier: '', file: 'target/"${ArtifactId}"-"${Version}".war', type: 'war']], credentialsId: '4a2b8b28-6dab-414e-b500-f7b74e926585', groupId: '"${GroupId}"', nexusUrl: 'http://3.15.172.190:8081', nexusVersion: 'nexus3', protocol: 'http', repository: '"${NexusRepo}"', version: '"${Version}"'
+    nexusArtifactUploader artifacts: [[artifactId: "${ArtifactId}", classifier: '', file: "target/${ArtifactId}-${Version}.war", type: 'war']], credentialsId: '4a2b8b28-6dab-414e-b500-f7b74e926585', groupId: "${GroupId}", nexusUrl: 'http://3.15.172.190:8081', nexusVersion: 'nexus3', protocol: 'http', repository: "${NexusRepo}", version: "${Version}"
 }
 
 }
