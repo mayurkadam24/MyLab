@@ -10,7 +10,7 @@ environment {
 
 ArtifactId = readMavenPom().getArtifactId()
 Version = readMavenPom().getVersion()
-GroupId = readMavenPom().getGroupID
+GroupId = readMavenPom().getGroupID()
 
 }
 
